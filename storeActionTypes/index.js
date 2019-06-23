@@ -1,0 +1,2 @@
+export const SWITCH_THEME = 'SWITCH_THEME'
+export const GET_ALL_COUNTRIES = 'GET_ALL_COUNTRIES'

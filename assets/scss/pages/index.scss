@@ -1,0 +1,27 @@
+
+.navbar-items-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  @media (max-width: 460px) {
+    margin-top: 3.6rem;
+    justify-content: stretch;
+  }
+  .v-input {
+    max-width: 30%;
+    max-height: 6rem;
+    @media (max-width: 460px) {
+      max-width: 100%;
+    }
+
+  }
+}
+
+.inner-card-wrapper {
+
+  .card-list {
+    margin: 1rem 0;
+    padding: 0;
+  }
+}
