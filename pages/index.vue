@@ -9,41 +9,57 @@
             :items="items"
             :loading="isLoading"
             :search-input.sync="search"
+            append-icon=""
             color="white"
             hide-no-data
-            hide-selected
+            box
             solo
+            flat
+            hide-selected
             placeholder="Search for a country"
             return-object
           />
           <v-select
             v-model="filter"
             :items="filterOpts"
+            clearable
+            box
             solo
-            label="Outline style"
-            outline
+            flat
+            label="Filter by Region"
+            @change="filterCountries"
           />
         </div>
       </v-toolbar>
     </v-flex>
-    <v-container grid-list-md>
-      <v-layout row wrap>
-        <v-flex
-          v-for="(country, i) in countries"
-          :key="i"
-          style="margin-top: 1rem"
-          xs3
-        >
-          <v-card v-ripple class="inline-block" hover>
-            <v-img :src="country.flag" aspect-ratio="2" />
-
+    <v-container
+      grid-list-xl
+      style="margin-top: 3rem"
+      d-flex
+      fluid
+      align-content-center
+      justify-content-center
+    >
+      <v-layout row wrap align-content- justify-center>
+        <v-flex v-for="(country, i) in countries" :key="i">
+          <v-card v-ripple class="inline-block" hover width="200">
+            <v-img :src="country.flag" aspect-ratio="1.80" />
             <v-card-title primary-title>
               <div class="inner-card-wrapper">
                 <h3 class="headline mb-0">{{ country.name }}</h3>
                 <ul class="no-decor-list card-list">
-                  <li><strong>Population: </strong>{{ country.population }}</li>
-                  <li><strong>Region: </strong> {{ country.region }}</li>
-                  <li><strong>Capital: </strong> {{ country.capital }}</li>
+                  <li>
+                    <strong>Population: </strong>
+                    {{ country.population ? country.population : 'Unknown' }}
+                  </li>
+                  <li>
+                    <strong>Region: </strong>
+                    {{ country.region ? country.region : 'Unknown' }}
+                  </li>
+                  <li>
+                    <strong>Capital: </strong>
+                    {{ country.capital ? country.capital : 'Unknown' }}
+                  </li>
                 </ul>
               </div>
             </v-card-title>
@@ -55,18 +71,48 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+import debounce from '../helpers/debounce'
+
 export default {
   data: () => ({
     search: '',
     isLoading: false,
     items: [],
-    filterOpts: ['África', 'América', 'Asia', 'Europe', 'Oceania'],
+    filterOpts: ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'],
     model: '',
     filter: ''
   }),
   computed: {
     countries() {
       return this.$store.state.countries
+    }
+  },
+  watch: {
+    search(s) {
+      if (s === null || s.length <= 0) {
+        this.getAllCountries()
+        return
+      }
+      debounce(() => {
+        this.getCountryByName(s)
+      }, 620)()
+    }
+  },
+  created() {
+    this.getAllCountries()
+  },
+  methods: {
+    ...mapActions({
+      getCountriesByRegion: 'getCountriesByRegion',
+      getCountryByName: 'getCountryByName',
+      getAllCountries: 'getAllCountries'
+    }),
+
+    filterCountries(region) {
+      return !region
+        ? this.getAllCountries()
+        : this.getCountriesByRegion(region)
     }
   }
 }

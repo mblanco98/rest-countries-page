@@ -1,7 +1,39 @@
 @import './helpers/_atomic-classes';
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,600,800&display=swap');
 
 body, html {
   font-family: 'Nunito Sans', sans-serif !important;
   font-size: 14px;
+  font-weight: 300;
 }
+
+.v-sheet {
+  h3 {
+    font-weight: 800;
+    font-size: 18px !important
+  }
+  strong {
+    font-weight: 600;
+  }
+}
+
+.theme--light.application {
+  background: hsl(0, 0%, 98%);
+  color: hsl(200, 15%, 8%);
+}
+
+.theme--dark.application {
+  background: hsl(207, 26%, 17%);
+  color: hsl(200, 15%, 8%);
+}
+
+.theme--dark.v-sheet,
+.theme--dark.v-toolbar {
+  background: hsl(209, 23%, 22%);
+}
+
+.theme--light.v-sheet,
+.theme--light.v-toolbar {
+  background: hsl(0, 0%, 100%);
+}
+
