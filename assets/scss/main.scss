@@ -37,3 +37,6 @@ body, html {
   background: hsl(0, 0%, 100%);
 }
 
+.container.grid-list-xl .layout .flex {
+  max-width: 224px !important;
+}
