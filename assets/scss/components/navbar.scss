@@ -1,0 +1,9 @@
+.app-navbar {
+  padding: 0 60px !important;
+  @media (max-width: 450px) {
+    padding: 0 5px !important;
+    .v-toolbar__title {
+      font-size: 15px !important
+    }
+  }
+}

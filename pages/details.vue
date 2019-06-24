@@ -5,8 +5,8 @@
       <span class="normalize-text fix-left-mar">Back</span>
     </v-btn>
     <v-flex xs12 class="details-wrapper">
-      <v-layout row wrap>
-        <v-img :src="country.flag" />
+      <v-layout row wrap justify-center>
+        <v-img :src="country.flag" class="flag-img" />
         <v-card class="card-wrapper" flat color="transparent">
           <v-card-title primary-title>
             <div class="card-inner-wrapper">
@@ -29,7 +29,7 @@
                         : item[1].toLowerCase() === 'topleveldomain'
                         ? country[item[1]][0]
                         : item[1].toLowerCase() === 'languages'
-                        ? country[item[1]][0].name
+                        ? getCountryLanguages(country[item[1]])
                         : country[item[1]]
                     }}
                   </span>
@@ -41,14 +41,16 @@
               class="tags-wrapper"
             >
               <strong>Border Countries: </strong>
-              <v-chip
-                v-for="(tag, i) in country.borders"
-                :key="i"
-                label
-                class="tag"
-              >
-                {{ getCountryName(tag) }}
-              </v-chip>
+              <div class="tags-inner-wrapper">
+                <v-chip
+                  v-for="(tag, i) in country.borders"
+                  :key="i"
+                  label
+                  class="tag"
+                >
+                  {{ getCountryName(tag) }}
+                </v-chip>
+              </div>
             </div>
           </v-card-title>
         </v-card>
@@ -80,6 +82,11 @@ export default {
     },
     getCountryName() {
       return this.$store.getters.getCountryName
+    }
+  },
+  methods: {
+    getCountryLanguages(langs) {
+      return String(langs.map(lang => lang.name))
     }
   }
 }

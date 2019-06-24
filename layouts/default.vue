@@ -2,7 +2,7 @@
   <v-app :dark="isDark">
     <c-navbar />
     <v-content>
-      <v-container>
+      <v-container fluid class="container-app">
         <nuxt />
       </v-container>
     </v-content>
@@ -20,3 +20,7 @@ export default {
   mixins: [theme]
 }
 </script>
+
+<style lang="scss" scoped>
+@import '../assets/scss/layouts/default.scss';
+</style>

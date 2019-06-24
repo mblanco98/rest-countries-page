@@ -41,7 +41,7 @@
       justify-content-center
     >
       <v-layout row wrap align-content- justify-center>
-        <v-flex v-for="(country, i) in countries" :key="i">
+        <v-flex v-for="(country, i) in countries" :key="i" xs8>
           <v-card
             v-ripple
             class="inline-block"
@@ -122,6 +122,7 @@ export default {
     },
 
     setActiveCountry(country) {
+      this.getAllCountries()
       this.$store.dispatch('setActiveCountry', country)
       this.$router.push('/details')
     }

@@ -6,8 +6,16 @@
 .details-wrapper {
   margin-top: 4rem;
   .card-wrapper {
-    width: 400px;
-    margin-left: 8.4rem;
+    width: 44rem;
+    margin-left: 4%;
+    @media (max-width: 475px) {
+      margin-left: 0;
+    }
+
+    @media (max-width: 1120px) {
+      width: 80%;
+      margin-left: 0;
+    }
 
     .card-inner-wrapper {
       display: flex;
@@ -21,9 +29,29 @@
 
 .grid-items-wrapper {
   display: grid;
-  grid-gap: .4rem 4rem;
+  grid-gap: 5% 30%;
   grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: 475px) {
+    display: flex;
+    flex-flow: column wrap;
+  }
+
   .grid-item {
+    @media (max-width: 475px) {
+      margin: .4rem 0;
+
+      &:nth-child(2) {
+        margin-top: 3rem;
+        order: 5;
+      }
+      &:nth-child(4) {
+        order: 6;
+      }
+      &:nth-child(6) {
+        order: 7;
+      }
+    }
     &:nth-child(7) {
       grid-column: 1 / span 2;
     }
@@ -31,8 +59,40 @@
 }
 
 .tags-wrapper {
-  margin-top: 6rem;
+  margin-top: 6.4rem;
   .tag {
     width: fit-content;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  @media (max-width: 475px) {
+    width: 100%;
+    display: flex;
+    margin-top: 2.4rem;
+    align-items: center;
+    flex-flow: row wrap;
+
+    .tags-inner-wrapper {
+      margin-top: 1rem
+    }
+  }
+}
+
+.flag-img {
+  max-width: 38vw;
+  width: 38vw;
+  height: 50vh;
+  @media (max-width: 1120px) {
+    height: 54vh;
+    max-width: 80%;
+    margin-bottom: 3rem;
+  }
+
+  @media (max-width: 475px) {
+    height: 44vh;
+    max-width: 100%;
+    margin-bottom: 3rem;
   }
 }

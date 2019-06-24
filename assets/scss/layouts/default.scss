@@ -1,0 +1,6 @@
+.container-app {
+  padding: 54px 82px;
+  @media (max-width: 450px) {
+    padding: 50px 20px;
+  }
+}

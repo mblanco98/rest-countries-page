@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar fixed app>
+  <v-toolbar fixed app class="app-navbar">
     <v-toolbar-title>Where in the world?</v-toolbar-title>
     <v-spacer />
     <v-toolbar-items>
@@ -26,3 +26,7 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import '../assets/scss/components/navbar.scss';
+</style>
