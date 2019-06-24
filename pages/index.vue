@@ -42,7 +42,13 @@
     >
       <v-layout row wrap align-content- justify-center>
         <v-flex v-for="(country, i) in countries" :key="i">
-          <v-card v-ripple class="inline-block" hover width="200">
+          <v-card
+            v-ripple
+            class="inline-block"
+            hover
+            width="200"
+            @click="setActiveCountry(country)"
+          >
             <v-img :src="country.flag" aspect-ratio="1.80" />
             <v-card-title primary-title>
               <div class="inner-card-wrapper">
@@ -113,6 +119,11 @@ export default {
       return !region
         ? this.getAllCountries()
         : this.getCountriesByRegion(region)
+    },
+
+    setActiveCountry(country) {
+      this.$store.dispatch('setActiveCountry', country)
+      this.$router.push('/details')
     }
   }
 }

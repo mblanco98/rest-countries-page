@@ -2,7 +2,8 @@ import * as types from '../storeActionTypes'
 
 export const state = () => ({
   isDark: false,
-  countries: []
+  countries: [],
+  activeCountry: null
 })
 
 export const mutations = {
@@ -20,6 +21,10 @@ export const mutations = {
 
   [types.GET_COUNTRY](state, country) {
     state.countries = country
+  },
+
+  [types.SET_ACTIVE_COUNTRY](state, country) {
+    state.activeCountry = country
   }
 }
 
@@ -44,5 +49,17 @@ export const actions = {
     const res = await this.$axios.$get(`region/${region}`)
     if (!res) return
     commit(`${types.GET_COUNTRIES_BY_REGION}`, res)
+  },
+
+  setActiveCountry({ commit }, country) {
+    commit(`${types.SET_ACTIVE_COUNTRY}`, country)
+  }
+}
+
+export const getters = {
+  getCountryName: state => alphaCode => {
+    return state.countries
+      .filter(country => country.alpha3Code === alphaCode)[0]
+      .name.split(' ')[0]
   }
 }

@@ -1,0 +1,38 @@
+.back-btn {
+  width: 120px;
+  margin: 0;
+}
+
+.details-wrapper {
+  margin-top: 4rem;
+  .card-wrapper {
+    width: 400px;
+    margin-left: 8.4rem;
+
+    .card-inner-wrapper {
+      display: flex;
+      flex-flow: column;
+      strong {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.grid-items-wrapper {
+  display: grid;
+  grid-gap: .4rem 4rem;
+  grid-template-columns: repeat(2, 1fr);
+  .grid-item {
+    &:nth-child(7) {
+      grid-column: 1 / span 2;
+    }
+  }
+}
+
+.tags-wrapper {
+  margin-top: 6rem;
+  .tag {
+    width: fit-content;
+  }
+}

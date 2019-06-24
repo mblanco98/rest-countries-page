@@ -28,7 +28,9 @@ body, html {
 }
 
 .theme--dark.v-sheet,
-.theme--dark.v-toolbar {
+.theme--dark.v-toolbar,
+.theme--dark.v-btn:not(.v-btn--icon):not(.v-btn--flat),
+.theme--dark.v-chip {
   background: hsl(209, 23%, 22%);
 }
 
@@ -39,4 +41,16 @@ body, html {
 
 .container.grid-list-xl .layout .flex {
   max-width: 224px !important;
+}
+
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s
+}
+.page-enter, .page-leave-active {
+  opacity: 0
+}
+
+.v-chip__content {
+  justify-content: center !important;
+  width: 100% !important;
 }
