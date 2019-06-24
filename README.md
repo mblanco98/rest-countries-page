@@ -2,13 +2,9 @@
 
 ![Design preview for the REST Countries API with color theme switcher coding challenge](./design/desktop-preview.jpg)
 
-## Welcome! 👋
+## Hello there! 👋
 
-Thanks for checking out this front-end coding challenge.
-
-[Frontend Mentor](https://www.frontendmentor.io) challenges allow you to improve your skills in a real-life workflow.
-
-**To do this challenge, you need a good understanding of JavaScript.**
+This is a front-end coding challenge taken from [Frontend Mentor](https://www.frontendmentor.io)
 
 ## The challenge
 
@@ -24,30 +20,6 @@ Your users should be able to:
 - Click on a country to see more detailed information on a separate page
 - Click through to the border countries on the detail page
 - Toggle the color scheme between light and dark mode *(optional)*
-
-Want some support on the challenge? Join our Slack community and ask questions in the **#help** channel.
-
-## Where to find everything
-
-Your task is to build out the project to the designs inside the `/design` folder. 
-
-In this challenge, you will find mobile and desktop designs in light and dark mode color schemes for both pages.
-
-The designs are in JPG static format. This will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. This should help train your eye to perceive differences in spacings and sizes.
-
-If you would like the Sketch file in order to see sizes etc, it is available to download from the challenge page on the site.
-
-There are no assets for this challenge, as the country flags will be pulled from the [REST Countries API](https://restcountries.eu) and you can use an icon font library for the icons.
-
-There is a `style-guide.md` file, which contains the information you'll need, such as color palette and fonts.
-
-## Building your project
-
-Practice using version control by creating your own GitHub repository for this challenge. This has the added benefit of being able to publish the site for free on GitHub Pages. Find out more about GitHub Pages here: [https://pages.github.com](https://pages.github.com).
-
-Another great tool you could use to get your website live is [Netlify](https://www.netlify.com). They offer a very simple and intuitive way of deploying a site for free and linking the live version to your Git repository.
-
-Also, you could try building this project in a team. This is a great way to practice collaborative coding.
 
 ## Suggested workflow
 
@@ -67,11 +39,3 @@ There are multiple places you can share your solution:
 1. Submit it on the platform so that other users will see your solution on the site. Other users will be able to give you feedback, which could help improve your code for the next project.
 2. Share your repository and live URL in the **#finished-projects** channel of the Slack community.
 3. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor** including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-
-## Giving feedback
-
-Feedback is always welcome, so if you have any to give on this challenge please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
